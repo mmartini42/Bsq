@@ -46,8 +46,9 @@ gmk:
 	./Scripts/generate-mk.sh
 
 norminette: clean
-	norminette -R CheckForbiddenSourceHeader sources
-	norminette -R CheckDefine includes
+	@printf "${GREEN}"
+	@norminette -R CheckForbiddenSourceHeader Sources
+	@norminette -R CheckDefine Includes
 
 end:
 	./Scripts/end.sh

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft_str.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lduplain <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/28 22:43:11 by lduplain          #+#    #+#             */
-/*   Updated: 2020/09/29 14:00:11 by lduplain         ###   ########lyon.fr   */
+/*   Created: 2021/09/20 20:03:50 by mathmart          #+#    #+#             */
+/*   Updated: 2021/09/20 20:05:31 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 # include "libft.h"
 
 /*
-**	Get the len of a str. Add 1 to get the len with '\0'
-**	/STR/FT_STRLEN.C
+** Get the len of a str. Add 1 to get the len with '\0'
+** /STR/FT_STRLEN.C
 */
 
 int		ft_strlen(char *str);

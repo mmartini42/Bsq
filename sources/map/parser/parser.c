@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parser.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lfilloux <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/20 19:45:52 by lfilloux          #+#    #+#             */
+/*   Updated: 2021/09/20 19:50:19 by lfilloux         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "header.h"
 
-int		validate_row(t_file *file, t_map *map, int line_size)
+int	validate_row(t_file *file, t_map *map, int line_size)
 {
-	int x;
+	int	x;
 
 	x = 0;
 	while (x < line_size)
@@ -15,14 +27,14 @@ int		validate_row(t_file *file, t_map *map, int line_size)
 	return (1);
 }
 
-int		*create_row(t_file *file, t_map *map, int y, int line_size)
+int	*create_row(t_file *file, t_map *map, int y, int line_size)
 {
-	int		*row;
-	int		x;
+	int	*row;
+	int	x;
 
 	if (!validate_row(file, map, line_size))
 		return (0);
-	if (!(row = malloc(line_size * sizeof(int))))
+	if (!(row = malloc(line_size * sizeof(int)))) // change line
 		return (0);
 	x = 0;
 	while (x < line_size)
@@ -39,10 +51,10 @@ int		*create_row(t_file *file, t_map *map, int y, int line_size)
 	return (row);
 }
 
-int		set_map(t_file *file, t_map *map)
+int	set_map(t_file *file, t_map *map)
 {
-	int		y;
-	int		line_size;
+	int	y;
+	int	line_size;
 
 	y = 0;
 	while (next_line(file))
@@ -66,14 +78,14 @@ int		set_map(t_file *file, t_map *map)
 	return (1);
 }
 
-int		parse_map(t_file *file, t_map *map)
+int	parse_map(t_file *file, t_map *map)
 {
 	open_file(file);
 	if (!next_line(file))
 		return (0);
 	if (!set_map_height(map, file->line) || !set_map_chars(map, file->line))
 		return (0);
-	if (!(map->map = malloc(map->height * sizeof(int*))))
+	if (!(map->map = malloc(map->height * sizeof(int *)))) // change line
 		return (0);
 	if (!set_map(file, map))
 		return (0);

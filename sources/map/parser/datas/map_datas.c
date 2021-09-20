@@ -1,10 +1,19 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   map_datas.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lfilloux <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/20 19:47:36 by lfilloux          #+#    #+#             */
+/*   Updated: 2021/09/20 19:47:53 by lfilloux         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "header.h"
-
 #include <stdio.h>
 
-int		set_map_height(t_map *map, char *map_datas)
+int	set_map_height(t_map *map, char *map_datas)
 {
 	map->height = ft_natoi(map_datas, ft_strlen(map_datas) - 4);
 	if (map->height <= 0)
@@ -12,9 +21,9 @@ int		set_map_height(t_map *map, char *map_datas)
 	return (1);
 }
 
-int		set_map_chars(t_map *map, char *map_datas)
+int	set_map_chars(t_map *map, char *map_datas)
 {
-	int first_line_len;
+	int	first_line_len;
 
 	first_line_len = ft_strlen(map_datas) - 1;
 	map->void_char = map_datas[first_line_len - 3];

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   print_map.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lfilloux <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/20 19:42:06 by lfilloux          #+#    #+#             */
+/*   Updated: 2021/09/20 19:43:15 by lfilloux         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "header.h"
 
 void	print_map_structure(t_map *map)
@@ -23,8 +35,8 @@ void	print_map_structure(t_map *map)
 
 void	print_map(t_map *map)
 {
-	int y;
-	int x;
+	int	y;
+	int	x;
 
 	y = 0;
 	while (y < map->height)
@@ -40,19 +52,21 @@ void	print_map(t_map *map)
 	}
 }
 
-int		is_result_pos(t_map *map, int y, int x)
+int	is_result_pos(t_map *map, int y, int x)
 {
 	if (x > map->sol_x - map->sol_size && x <= map->sol_x)
+	{
 		if (y > map->sol_y - map->sol_size && y <= map->sol_y)
 			return (1);
+	}
 	return (0);
 }
 
 void	print_result(t_map *map)
 {
-	int value;
-	int y;
-	int x;
+	int	value;
+	int	y;
+	int	x;
 
 	y = 0;
 	while (y < map->height)

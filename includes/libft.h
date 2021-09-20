@@ -16,13 +16,13 @@
 **	/CONVERTER/FT_ATOI.C
 */
 
-int		ft_atoi(char *str);
+int	ft_atoi(char *str);
 
 /*
 **	Convert a str to an int from 0 to n characters
 **	/CONVERTER/FT_ATOI.C
 */
 
-int		ft_natoi(char *str, unsigned int n);
+int	ft_natoi(char *str, unsigned int n);
 
 #endif

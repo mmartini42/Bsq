@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lfilloux <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/20 19:23:46 by lfilloux          #+#    #+#             */
+/*   Updated: 2021/09/20 19:24:42 by lfilloux         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "header.h"
 #include <stdio.h>
 
 void	ft_err_putstr(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
@@ -13,7 +25,7 @@ void	ft_err_putstr(char *str)
 	}
 }
 
-int		execute(t_file *file, t_map *map, char *file_path, int fd)
+int	execute(t_file *file, t_map *map, char *file_path, int fd)
 {
 	file->file_path = file_path;
 	file->fd = fd;
@@ -23,12 +35,11 @@ int		execute(t_file *file, t_map *map, char *file_path, int fd)
 	}
 	solve(map);
 	print_result(map);
-	printf("\033[1;32m %s\n", file->line);
 	free_all_map(map);
 	return (1);
 }
 
-int		main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_file	file;
 	t_map	map;
@@ -43,7 +54,8 @@ int		main(int argc, char **argv)
 	while (i < argc)
 	{
 		execute(&file, &map, argv[i], -2);
-		// mettre '/n' ici?
+		if (i < argc - 1)
+			ft_putchar('\n');
 		i++;
 	}
 	return (0);

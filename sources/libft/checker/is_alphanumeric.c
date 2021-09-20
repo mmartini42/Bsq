@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   is_alphanumeric.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lfilloux <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/20 19:27:29 by lfilloux          #+#    #+#             */
+/*   Updated: 2021/09/20 19:28:13 by lfilloux         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
-int		is_alphanumeric(char c)
+int	is_alphanumeric(char c)
 {
 	return (is_numeric(c) || is_alpha(c));
 }

@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_natoi.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lfilloux <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/20 19:32:41 by lfilloux          #+#    #+#             */
+/*   Updated: 2021/09/20 19:32:46 by lfilloux         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_natoi(char *str, unsigned int n)
+int	ft_natoi(char *str, unsigned int n)
 {
 	unsigned int	i;
 	unsigned int	result;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfilloux <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 19:23:46 by lfilloux          #+#    #+#             */
-/*   Updated: 2021/09/20 19:24:42 by lfilloux         ###   ########lyon.fr   */
+/*   Updated: 2021/09/20 23:26:12 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int	execute(t_file *file, t_map *map, char *file_path, int fd)
 	file->fd = fd;
 	if (!parse_map(file, map))
 	{
+		ft_err_putstr("map error\n");
 		return (0);
 	}
 	solve(map);

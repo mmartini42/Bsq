@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfilloux <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 19:45:52 by lfilloux          #+#    #+#             */
-/*   Updated: 2021/09/20 19:50:19 by lfilloux         ###   ########lyon.fr   */
+/*   Updated: 2021/09/20 20:02:10 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ int	*create_row(t_file *file, t_map *map, int y, int line_size)
 
 	if (!validate_row(file, map, line_size))
 		return (0);
-	if (!(row = malloc(line_size * sizeof(int)))) // change line
+	row = malloc(line_size * sizeof(int));
+	if (!row)
 		return (0);
 	x = 0;
 	while (x < line_size)
@@ -85,7 +86,8 @@ int	parse_map(t_file *file, t_map *map)
 		return (0);
 	if (!set_map_height(map, file->line) || !set_map_chars(map, file->line))
 		return (0);
-	if (!(map->map = malloc(map->height * sizeof(int *)))) // change line
+	map->map = malloc(map->height * sizeof(int *));
+	if (!map->map)
 		return (0);
 	if (!set_map(file, map))
 		return (0);

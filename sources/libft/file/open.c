@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   open.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfilloux <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 19:35:14 by lfilloux          #+#    #+#             */
-/*   Updated: 2021/09/20 19:37:33 by lfilloux         ###   ########lyon.fr   */
+/*   Updated: 2021/09/20 19:58:10 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ int	open_file(t_file *file)
 {
 	if (file->fd == 0)
 		return (1);
-	if ((file->fd = open(file->file_path, O_RDONLY)) == -1) //changer cette ligne
+	file->fd = open(file->file_path, O_RDONLY);
+	if (file->fd == -1)
 		return (0);
 	return (1);
 }

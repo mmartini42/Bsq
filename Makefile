@@ -14,13 +14,13 @@ CO_DELET = \033[3;31m
 CO_A_OUT = \033[96m
 WHITE = \033[1;49;97m
 
--include sources.mk
+-include Sources.mk
 
 NAME = bsq
 
 OBJECTS = $(SOURCES:.c=.o)
 
-CFLAGS = -Wall -Wextra -Werror -O3 -g -I includes
+CFLAGS = -Wall -Wextra -Werror -O3 -g -I Includes
 
 %.o: %.c $(HEADER)
 	@printf "\033[2K\r$(PURPLE)$<: $(CYAN)loading..$(RESET)"
@@ -33,22 +33,24 @@ $(NAME): $(OBJECTS)
 all: $(NAME)
 
 clean:
-	$(RM) $(OBJECTS)
+	@$(RM) $(OBJECTS)
+	@printf "${RED}Delete OBJECTS ${GREEN} [√]$(RESET)\n"
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
+	@printf "${RED}Delete ${NAME}${GREEN} [√]$(RESET)\n"
 
 re: fclean all
 
 gmk:
-	./scripts/generate-mk.sh
+	./Scripts/generate-mk.sh
 
 norminette: clean
 	norminette -R CheckForbiddenSourceHeader sources
 	norminette -R CheckDefine includes
 
 end:
-	./scripts/end.sh
+	./Scripts/end.sh
 
 test: $(NAME)
 	./$(NAME) map.txt

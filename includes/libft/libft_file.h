@@ -6,7 +6,7 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 20:03:45 by mathmart          #+#    #+#             */
-/*   Updated: 2021/09/20 20:03:47 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/09/20 20:07:27 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "libft.h"
 
-typedef struct	s_file
+typedef struct s_file
 {
 	int		fd;
 	char	*file_path;
